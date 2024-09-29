@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Inicial do Blog</title>
+    <link
+    
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #cbe8ff;
+      }
+      .post-card {
+        margin-bottom: 20px;
+        height: 200px;
+      }
+      .post-card img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .text-center {
+        padding-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="text-center">Postagens</h1>
+      
+      <%
+        const posts = 
+        [
+            { title: "Post 1", imgSrc: "https://i.pinimg.com/564x/3b/7a/e0/3b7ae0b7cc6e3b282cb45c6a31b807a0.jpg", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { title: "Post 2", imgSrc: "https://i.pinimg.com/564x/3b/7a/e0/3b7ae0b7cc6e3b282cb45c6a31b807a0.jpg", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { title: "Post 3", imgSrc: "https://i.pinimg.com/564x/3b/7a/e0/3b7ae0b7cc6e3b282cb45c6a31b807a0.jpg", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+            { title: "Post 4", imgSrc: "https://i.pinimg.com/564x/3b/7a/e0/3b7ae0b7cc6e3b282cb45c6a31b807a0.jpg", text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." }
+        ];
+      %>
+
+      <div class="row">
+          <% posts.forEach(post => { %>
+              <div class="col-3 post-card">
+                  <div class="card">
+                      <img src="<%= post.imgSrc %>" class="card-img-top" alt="<%= post.title %>">
+                      <div class="card-body">
+                          <h5 class="card-title"><%= post.title %></h5>
+                          <p class="card-text"><%= post.text %></p>
+                          <a href="#" class="btn btn-primary">Acessar</a>
+                      </div>
+                  </div>
+              </div>
+          <% }) %>
+      </div>
+    </div>
+  </body>
+</html>
